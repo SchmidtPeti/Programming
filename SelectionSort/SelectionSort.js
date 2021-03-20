@@ -18,21 +18,21 @@ const MaxSelectionSort = (arr) => {
     let counter = 0;
     for(let i = n-1; i>=0;i--){
         let comparing = 0;
-        let swaps = 0;
+        let swaps = 1;
         let max = i;
         for(let j=0;j<i;j++){
             comparing++;
             if(arr[j]>arr[max]){
-                swaps++;
                 max=j;
             }
         }
         let tmp = arr[max];
         arr[max] = arr[i];
         arr[i]=tmp;
+        console.log((counter+1)+". round",arr);
         console.log("Comparing: ",comparing);
         console.log("Swaps: ",swaps);
-        console.log(counter+". round",arr);
+        console.log("--------------------------");
         counter++;
     }
 }
