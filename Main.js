@@ -5,31 +5,43 @@ import quickSort from "./QuickSort/QuickSortSecond.js";
 import mergeSort from "./MergeSort/MergeSort.js";
 
 const ImprovedBubble = () => {
+    console.log("ImprovedBubble");
+    console.log("------------------");
     let element = document.getElementById('ImprovedSortArray').value;
     let elements = element.split(`,`).map(x=>+x);
     ImprovedBubbleSort(elements);
 }
 const MaxSelection = () => {
+    console.log("MaxSelection");
+    console.log("------------------");
     let element = document.getElementById('MaxSelectionArray').value;
     let elements = element.split(`,`).map(x=>+x);
     MaxSelectionSort(elements);
 }
 const MinSelection = () => {
+    console.log("MinSelection");
+    console.log("------------------");    
     let element = document.getElementById('MinSelectionArray').value;
     let elements = element.split(`,`).map(x=>+x);
     MinSelectionSort(elements);
 }
 const InsertionSortMethod = () => {
+    console.log("InsertionSortMethod");
+    console.log("------------------"); 
     let element = document.getElementById('InsertionArray').value;
     let elements = element.split(`,`).map(x=>+x);
     InsertionSort(elements);
 }
 const QuickSortMethod = () => {
+    console.log("QuickSortMethod");
+    console.log("------------------"); 
     let element = document.getElementById('QuickSortArray').value;
     let elements = element.split(`,`).map(x=>+x); 
     quickSort(elements);   
 }
 const MergeSortMethod = () => {
+    console.log("MergeSortMethod");
+    console.log("------------------"); 
     let element = document.getElementById('MergeSortArray').value;
     let elements = element.split(`,`).map(x=>+x); 
     mergeSort(elements);      
