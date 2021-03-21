@@ -36,8 +36,13 @@ const QuickSortMethod = () => {
     console.log("QuickSortMethod");
     console.log("------------------"); 
     let element = document.getElementById('QuickSortArray').value;
-    let elements = element.split(`,`).map(x=>+x); 
-    quickSort(elements);   
+    let elements = element.split(`,`).map(x=>+x);
+    if(document.getElementById("startWith").checked){ 
+    quickSort(elements,0,elements.length-1,true);   
+    }
+    else{
+        quickSort(elements,0,elements.length-1,false);   
+    }
 }
 const MergeSortMethod = () => {
     console.log("MergeSortMethod");
