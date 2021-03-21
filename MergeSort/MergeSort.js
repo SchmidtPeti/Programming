@@ -1,6 +1,5 @@
+let counter = 1;
 const merge = (left, right) => {
-    console.log("left: ",left);
-    console.log("right: ",right);
     let arr = []
     // Break out of loop if any one of the array gets empty
     while (left.length && right.length) {
@@ -14,12 +13,16 @@ const merge = (left, right) => {
     
     // Concatenating the leftover elements
     // (in case we didn't go through the entire left or right array)
+    console.log("arr contains: ",arr);
+    console.log("this will after the array left: ",left);
+    console.log("this will after the array and the left right: ",right);
+    console.log(counter+".round merged array: ",arr.concat(left,right));
+    console.log("--------------------");
+    counter++;
     return arr.concat(left,right);
 }
 const mergeSort = (array) => {
-    const half = Math.floor(array.length / 2);
-    console.log("new arrays: ",array);
-    
+    const half = Math.floor(array.length / 2);    
     // Base case or terminating case
     if(array.length < 2){
       return array 

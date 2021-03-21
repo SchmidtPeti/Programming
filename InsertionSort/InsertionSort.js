@@ -21,5 +21,6 @@ const InsertionSort = (arr) => {
         console.log("Swaps: ",swaps);
         counter++;
     }
+    console.log("it is not perfect, be awere of the comparing");
 }
 export default InsertionSort;
