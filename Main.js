@@ -37,6 +37,7 @@ const QuickSortMethod = () => {
     console.log("------------------"); 
     let element = document.getElementById('QuickSortArray').value;
     let elements = element.split(`,`).map(x=>+x);
+    console.log(document.getElementById("startWith").checked);
     if(document.getElementById("startWith").checked){ 
     quickSort(elements,0,elements.length-1,true);   
     }
