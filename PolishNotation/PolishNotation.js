@@ -145,7 +145,7 @@ const toRPN = (equation) => {
         console.log("--------");
     }
     if(!stack.isEmpty()){
-        console.log("last step: ",stack);
+        stack.printAll();
         while(!stack.isEmpty()){
             str+=stack.pop();
         }
