@@ -141,7 +141,7 @@ const toRPN = (equation) => {
             }
         }
         console.log(x);
-        console.log(stack);
+        stack.printAll();
         console.log("--------");
     }
     if(!stack.isEmpty()){
