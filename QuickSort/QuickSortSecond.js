@@ -1,9 +1,11 @@
+let keyComparing = 0;
 const swap = (arr,i,j) => {
     let tmp = arr[i];
     arr[i] = arr[j];
     arr[j] = tmp;
 }
 const partition = (arr,start,end,startWithStart) => {
+    keyComparing+=Math.abs(end-start);
     let i = 0;
     if(startWithStart){
         i = start;
@@ -54,5 +56,6 @@ const quickSort = (arr,start,end,startWithStart) => {
     quickSort(arr,start,q-1,startWithStart);
     quickSort(arr,q+1,end,startWithStart);
     }
+    console.log("Key comparing: ",keyComparing);
 }
 export default quickSort;
