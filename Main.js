@@ -64,7 +64,8 @@ const BubbleSortMethod = () => {
     console.log("Bubble Sort");
     console.log("----------------------");
     let element = document.getElementById('BubbleSortArray').value;
-    let elements = element.split(`,`).map(x=>+x); 
+    let elements = element.split(`,`).map(x=>+x);
+    BubbleSort(elements); 
 }
 document.getElementById("ImprovedBubble").addEventListener("click", ImprovedBubble);
 document.getElementById("MaxSelection").addEventListener("click", MaxSelection);
