@@ -22,11 +22,20 @@ const partition = (arr,start,end,startWithStart) => {
         let j = i+1;
         while(j<end){
             if(arr[j]<x){
+                console.log("swap(arr,i,j)");
+                console.log("i = ",i+" and data: "+arr[i]);
+                console.log("j = ",i+" and data: "+arr[j]);
+                console.log("--------------");
                 swap(arr,i,j);
                 i+=1;
             }
             j++;
         }
+        console.log("arr[end] = arr[i], arr[i] = x")
+        console.log("'end'/'start' index: ",end+" element: "+arr[end]);
+        console.log("i index: "+i+" element: "+arr[i]);
+        console.log("x value: "+x);
+        console.log("parti finished-------------")
         arr[end] = arr[i];
         arr[i] = x;
     }

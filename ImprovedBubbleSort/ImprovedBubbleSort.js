@@ -1,6 +1,8 @@
 const ImprovedBubbleSort = (arr) => {
     let i = arr.length-1;
     let counter = 0;
+    let AllSwaps = 0;
+    let Allcomparing = 0;
     while(i>0){
         let swap = 0;
         let swaps = 0;
@@ -19,8 +21,12 @@ const ImprovedBubbleSort = (arr) => {
         console.log((counter)+". round",arr);
         console.log("Comparing number: ",comparing);
         console.log("Swap numbers: ",swaps);
+        AllSwaps+=swaps;
+        Allcomparing+=comparing;
         i=swap;
         console.log("------------------------");
     }
+    console.log("All comarping: ",Allcomparing);
+    console.log("All swaps: ",AllSwaps)
 }
 export default ImprovedBubbleSort;
