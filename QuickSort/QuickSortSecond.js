@@ -52,10 +52,10 @@ const partition = (arr,start,end,startWithStart) => {
 let counter = 1;
 const quickSort = (arr,start,end,startWithStart) => {
     if(start<end){
-    let q = partition(arr,start,end,startWithStart);
-    quickSort(arr,start,q-1,startWithStart);
-    quickSort(arr,q+1,end,startWithStart);
+        let q = partition(arr,start,end,startWithStart);
+        quickSort(arr,start,q-1,startWithStart);
+        quickSort(arr,q+1,end,startWithStart);
+        console.log("Key comparing: ",keyComparing);    
     }
-    console.log("Key comparing: ",keyComparing);
 }
 export default quickSort;
