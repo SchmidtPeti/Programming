@@ -11,14 +11,14 @@ const InsertionSort = (arr) => {
             swaps++;
             arr[insertionPointer+1] = arr[insertionPointer];
             insertionPointer = insertionPointer-1;
+            if(insertionPointer<0||arr[insertionPointer]<==currentElement){
+                swaps+=2;
+            }
         }
         if(arr[insertionPointer]<=currentElement){
             comparing++;
         }
         arr[insertionPointer+1]=currentElement;//before this position the elements are lesser
-        if(comparing>1){
-            swaps+=2;
-        }
         console.log(counter+". round",arr);
         console.log("Comparing: ",comparing);
         console.log("Swaps: ",swaps);
