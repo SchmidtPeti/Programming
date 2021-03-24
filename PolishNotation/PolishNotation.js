@@ -42,4 +42,114 @@ const PolishNotation = (s) => {
     }
     return array;
 }
-export default PolishNotation;
+const pr = (x) => {
+    switch(x){
+        case "--":
+            return 10;
+            break;
+        case "^":
+            return 9;
+            break;
+        case "*":
+            return 8;
+            break;
+        case "/":
+            return 8;
+            break;
+        case "+":
+            return 7;
+            break;
+        case "-":
+            return 7;
+            break;  
+        case "=":
+            return 6;
+            break;     
+        default:
+            return 0;                     
+    }
+}
+const isOperator = (x) => {
+    switch(x){
+        case "+":
+            return true;
+            break;
+        case "-":
+            return true;
+            break;
+        case "*":
+            return true;
+            break;
+        case "/":
+            return true;
+            break;
+        case "^":
+            return true;
+            break;
+        case "--"://negation
+            return true;
+            break;    
+        case "=":
+            return true;
+            break;    
+        default: 
+            return false;    
+    }
+}
+const leftRightOperator = (x,stack) => {
+    if(stack.top()==="^"&&x==="^"){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+const toRPN = (equation) => {
+    let equationRead = equation; 
+    let str = "";
+    let stack = new Stack();
+    let splittedArray = equationRead.split(' ');
+    for(let i = 0;i<splittedArray.length;i++){
+        let x = splittedArray[i];
+        if(parseInt(x)){
+            str+="("+x+")";
+        }
+        else if(x==="("){
+            stack.push(x);
+        }
+        else if(x===")"){
+            while(stack.top() !== "("){
+                str+=stack.pop();
+            }
+            stack.pop();
+        }
+        else if(isOperator(x)){
+            if (leftRightOperator(x,stack)){
+                while(!stack.isEmpty()&&stack.top()!=="("&&pr(x)<=pr(stack.top())){
+                    str+=stack.pop();
+                }
+                stack.push(x);
+            }
+            else{
+                while(!stack.isEmpty()&&stack.top()!=="("&&pr(x)<pr(stack.top())){
+                    console.log("x",pr(x));
+                    console.log("top: ",pr(stack.top()))
+                    console.log("eredmeny",pr(x)<pr(stack.top()))
+                    str+=(stack.pop());
+                }
+                stack.push(x);
+            }
+        }
+        console.log(x);
+        console.log(stack);
+        console.log("--------");
+    }
+    if(!stack.isEmpty()){
+        console.log("last step: ",stack);
+        while(!stack.isEmpty()){
+            str+=stack.pop();
+        }
+    }
+    console.log(str);
+}
+export {PolishNotation,toRPN};

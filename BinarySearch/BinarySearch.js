@@ -6,7 +6,7 @@ const BinarySearch = (arr,element) => {
     let end = arr.length;
     let found = false;
     let index = 0;
-    while(!found&&start<=end){
+    while(!found&&start<end){
         console.log("start: "+start+" end: "+end);
         index = Math.floor((start+end)/2);
         if(arr[index]>element){
