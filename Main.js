@@ -3,6 +3,7 @@ import { MaxSelectionSort,MinSelectionSort } from "./SelectionSort/SelectionSort
 import InsertionSort from "./InsertionSort/InsertionSort.js";
 import quickSort from "./QuickSort/QuickSortSecond.js";
 import mergeSort from "./MergeSort/MergeSort.js";
+import {toRPN} from "./PolishNotation/PolishNotation.js";
 
 const ImprovedBubble = () => {
     console.log("ImprovedBubble");
@@ -52,10 +53,17 @@ const MergeSortMethod = () => {
     let elements = element.split(`,`).map(x=>+x); 
     mergeSort(elements);      
 }
+const Polish = () => {
+    console.log("Polish Notation");
+    console.log("----------------------");
+    let element = document.getElementById('PolishNotation').value;
+    toRPN(element);
+}
 document.getElementById("ImprovedBubble").addEventListener("click", ImprovedBubble);
 document.getElementById("MaxSelection").addEventListener("click", MaxSelection);
 document.getElementById("MinSelection").addEventListener("click", MinSelection);
 document.getElementById("InsertionSort").addEventListener("click", InsertionSortMethod);
 document.getElementById("QuickSort").addEventListener("click", QuickSortMethod);
 document.getElementById("MergeSort").addEventListener("click", MergeSortMethod);
+document.getElementById("PolishNotationBtn").addEventListener("click",Polish);
 

@@ -11,7 +11,7 @@ const InsertionSort = (arr) => {
             swaps++;
             arr[insertionPointer+1] = arr[insertionPointer];
             insertionPointer = insertionPointer-1;
-            if(insertionPointer<0||arr[insertionPointer]<==currentElement){
+            if(insertionPointer<0||arr[insertionPointer]<=currentElement){
                 swaps+=2;
             }
         }
