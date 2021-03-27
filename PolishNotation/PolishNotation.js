@@ -7,7 +7,6 @@ const PolishNotation = (s) => {
     while(current[0] !== undefined){
         if(parseInt(current[0])){
             array.push(parseInt(current[0]));
-            console.log(array);
         }
         else{
             switch(current[0]){
@@ -37,6 +36,7 @@ const PolishNotation = (s) => {
                 default: 
                     break;    
             }
+            console.log(current[0],array);
         }
         current = current.substring(1);
     }

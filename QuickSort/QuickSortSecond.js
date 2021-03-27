@@ -1,8 +1,10 @@
 let keyComparing = 0;
+let swapCount = 0;
 const swap = (arr,i,j) => {
     let tmp = arr[i];
     arr[i] = arr[j];
     arr[j] = tmp;
+    swapCount++;
 }
 const partition = (arr,start,end,startWithStart) => {
     keyComparing+=Math.abs(end-start);
@@ -57,5 +59,6 @@ const quickSort = (arr,start,end,startWithStart) => {
         quickSort(arr,q+1,end,startWithStart);
     }
     console.log("Key comparing: ",keyComparing);
+    console.log("Swap count: ",swapCount);
 }
 export default quickSort;

@@ -32,11 +32,11 @@ const MaxSelectionSort = (arr) => {
     let counter = 0;
     let Allcomparing = 0;
     let AllSwaps = 0;
-    for(let i = n-1; i>=0;i--){
+    for(let i = n-1; i>=1;i--){
         let comparing = 0;
         let swaps = 1;
-        let max = i;
-        for(let j=0;j<i;j++){
+        let max = 0;
+        for(let j=1;j<=i;j++){
             comparing++;
             if(arr[j]>arr[max]){
                 max=j;
@@ -45,6 +45,9 @@ const MaxSelectionSort = (arr) => {
         let tmp = arr[max];
         arr[max] = arr[i];
         arr[i]=tmp;
+        if(max===i){
+            console.log((counter+1),"ebben");
+        }
         Allcomparing+=comparing;
         AllSwaps+=swaps;
         console.log((counter+1)+". round",arr);
