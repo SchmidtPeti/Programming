@@ -39,7 +39,8 @@ class Queue{
         else{
             let str = "[ "
             for(let i=0;i<this.items.length;i++){
-                str += (i+1) + ": " + this.items[i]+", "
+               // str += (i+1) + ": " + this.items[i]+", "
+               str+=this.items[i]+", ";
             }
             str = str.substring(0,str.length-2);
             str += " ]";
