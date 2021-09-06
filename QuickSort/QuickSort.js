@@ -21,7 +21,6 @@ const partition = (arr,start,end) =>{
   // [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]] 
    return pivotIndex;
 }
-let logged = false;
 const quickSort = (arr,start,end) => {
     if (start >= end) {
         console.log("this is where the stack ends: ","start = "+start+", end = "+end);

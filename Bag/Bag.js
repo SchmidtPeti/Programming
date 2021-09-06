@@ -31,7 +31,6 @@ class Bag{//String bag
     }
     max(){
         if(this.items.length>0){
-            console.log("Max index",this.maxIdx);
             return this.items[this.maxIdx].key;
         }
         else{
@@ -42,7 +41,7 @@ class Bag{//String bag
         let {idx,found} = BinarySearch(this.items,element);
         if(found){
             this.items[idx].count-=1;
-            if(this.items.count===0){
+            if(this.items[idx].count===0){
                 this.items.splice(idx,1);
             }
             let {exists,index} = MaxSearch(this.items);

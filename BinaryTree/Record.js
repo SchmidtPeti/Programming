@@ -3,6 +3,14 @@ class Record{
         this.data = data;
         this.left = null;
         this.right = null;
+        this.parent = null;
     }
 }
-export default Record;
+class PrintRecord{
+    constructor(level,data,parent){
+        this.parent = parent;
+        this.level = level;
+        this.data = data;
+    }
+}
+export {Record,PrintRecord};

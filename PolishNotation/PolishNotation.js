@@ -132,9 +132,6 @@ const toRPN = (equation) => {
             }
             else{
                 while(!stack.isEmpty()&&stack.top()!=="("&&pr(x)<pr(stack.top())){
-                    console.log("x",pr(x));
-                    console.log("top: ",pr(stack.top()))
-                    console.log("eredmeny",pr(x)<pr(stack.top()))
                     str+=(stack.pop());
                 }
                 stack.push(x);

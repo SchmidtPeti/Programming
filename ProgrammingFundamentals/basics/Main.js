@@ -9,7 +9,7 @@ const even = (num) => {return num%2==0;}
 const containsHundred = (num) => {return num===100;}
 
 let sumOfArray = Sum(arr);
-console.log("Sum of the whole array: ",sumOfArray)
+console.log("Sum of the whole array: ",sumOfArray);
 
 let count = Counting(arr,even)
 console.log("Count of even numbers: ",count);
