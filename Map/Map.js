@@ -1,4 +1,5 @@
 import BinarySearch from './ChangedBinarySearch.js';
+import BinarySearchFromData from './ChangedBinarySearchData.js';
 import Record from './Record.js';
 
 class Map{//items are arranged
@@ -18,7 +19,7 @@ class Map{//items are arranged
             this.items.splice(idx,0,newItem);
         }
         else{
-            return "ThereIsAnElementWithThisKey";
+            //this.items[idx] = newItem;
         }
     }
     erase(key){
@@ -43,11 +44,17 @@ class Map{//items are arranged
             return "NoElement";
         }
     }
+    getKeyFromData(data){
+        if(this.items.filter(x=>x.element===data).length>0){
+            return this.items.filter(x=>x.element===data)[0].key
+        }
+        return "NoElement"
+    }
     printAll(){
         for(let i = 0; i<this.items.length;i++){
             console.log("key: "+this.items[i].key," data: "+this.items[i].element);
         }
-        console.log("---------------------");
+        //console.log("---------------------");
     }
 }
 export default Map;

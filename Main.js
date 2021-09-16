@@ -76,3 +76,5 @@ document.getElementById("MergeSort").addEventListener("click", MergeSortMethod);
 document.getElementById("PolishNotationBtn").addEventListener("click",Polish);
 document.getElementById("BubbleSort").addEventListener("click",BubbleSortMethod);
 
+console.log("Temporary code --------- ")
+
